@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Página de ejemplo con actividades completas del módulo 1 dadas en el Bootcamp de Desarrollador Web FullStack SoyHenry2024."
+    />
+    <meta
+      name="keywords"
+      content="SoyHenry, Modulo 1, 2024, HTML, CSS, JavaScript"
+    />
+    <meta name="author" content="Jesús Lautaro Careglio Albornoz" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modulo 1</title>
+    <link rel="shortcut icon" href="./favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Jesús Lautaro Careglio Albornoz</h1>
+        <h2>Página de Ejemplo</h2>
+      </header>
+      <section class="about">
+        <h3>🤔 ¿Qué es esto? 🧐</h3>
+        <p>
+          Se trata de una página de ejemplo usada para realizar las actividades
+          del módulo 1 dadas en el Bootcamp de Desarrollador Web FullStack
+          SoyHenry2024. Para ver el código fuente, visita este 👉
+          <a
+            href="https://github.com/JLCareglio/SoyHenry2024-FullStack-Modulo1"
+            target="_blank"
+            rel="noopener noreferrer"
+            >repositorio en GitHub</a
+          >.
+        </p>
+      </section>
+      <section class="technologies">
+        <h3>Tecnologías Web Vanilla</h3>
+        <div class="tech-grid">
+          <article class="tech-item">
+            <img src="assets/HTML.png" alt="HTML Icon" />
+            <p>HTML5</p>
+          </article>
+          <article class="tech-item">
+            <img src="assets/CSS.png" alt="CSS Icon" />
+            <p>CSS3</p>
+          </article>
+          <article class="tech-item">
+            <img src="assets/JS.png" alt="JavaScript Icon" />
+            <p>JavaScript</p>
+          </article>
+        </div>
+      </section>
+      <section class="CRUD">
+        <h3>CRUD de Colores</h3>
+        <ul id="colors" class="colors-grid">
+          <li id="color-add" class="color">
+            <input type="color" class="color-circle" value="#888888" />
+            <input
+              type="text"
+              class="color-title"
+              value="sin nombre"
+              placeholder="nombre"
+              required
+            />
+            <button class="color-button-add">agrega</button>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script type="module" src="./scripts/index.js"></script>
+  </body>
+</html>

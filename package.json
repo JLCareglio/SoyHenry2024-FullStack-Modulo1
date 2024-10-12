@@ -1,0 +1,23 @@
+{
+  "name": "soyhenry2024-fullstack-modulo1",
+  "version": "4.0.3",
+  "description": "Página de ejemplo con actividades completas del módulo 1 dadas en el Bootcamp de Desarrollador Web FullStack SoyHenry2024.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine",
+    "start": "live-server"
+  },
+  "keywords": [],
+  "author": "Jesús Lautaro Careglio Albornoz",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^5.3.1",
+    "live-server": "^1.2.2"
+  },
+  "type": "module",
+  "packageManager": "pnpm@9.12.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JLCareglio/SoyHenry2024-FullStack-Modulo1"
+  }
+}

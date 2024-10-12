@@ -1,0 +1,223 @@
+:root {
+  /* Colores */
+  --color-dark-bg: #333;
+  --color-darker-bg: #444;
+  --color-darkest-bg: #555;
+  --color-primary-text: #fff;
+  --color-secondary-text: #ccc;
+  --color-success: #28a745;
+  --color-success-hover: #218838;
+  --color-danger: #dc3545;
+  --color-danger-hover: #c82333;
+  --color-body-bg: #1a1a1a;
+  --color-shadow: #0000001a;
+
+  /* Espaciado */
+  --border-radius: 10px;
+  --border-radius-small: 8px;
+  --padding-container: 1.5rem;
+  --margin-bottom-container: 2rem;
+  --padding-button: 0.6rem 1.2rem;
+  --padding-block: 1rem;
+  --gap-grid: 1rem;
+
+  /* Tipografía */
+  --font-size-h1: 3rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.4rem;
+  --font-size-tech-item: 1.2rem;
+
+  /* Otros */
+  --transition-duration: 0.3s;
+  --transition-ease: ease;
+  --box-shadow: 0 4px 6px var(--color-shadow);
+  --circle-size: 100px;
+}
+
+.about {
+  background-color: var(--color-dark-bg);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--margin-bottom-container);
+  padding: var(--padding-container);
+}
+
+.about h3 {
+  font-size: var(--font-size-h3);
+  margin-bottom: 0.6rem;
+}
+
+.color {
+  align-items: center;
+  background-color: var(--color-darker-bg);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  padding-block: var(--padding-block);
+  text-align: center;
+  width: 100%;
+}
+
+.color-button-add {
+  background-color: var(--color-success);
+  border: none;
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--box-shadow);
+  color: var(--color-primary-text);
+  cursor: pointer;
+  font-weight: 700;
+  padding: var(--padding-button);
+  transition: background-color var(--transition-duration) var(--transition-ease),
+    transform 0.2s var(--transition-ease);
+}
+
+.color-button-add:hover {
+  background-color: var(--color-success-hover);
+  transform: translateY(-2px);
+}
+
+.color-button-remove {
+  background-color: var(--color-danger);
+  border: none;
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--box-shadow);
+  color: var(--color-primary-text);
+  cursor: pointer;
+  font-weight: 700;
+  padding: var(--padding-button);
+  transition: background-color var(--transition-duration) var(--transition-ease),
+    transform 0.2s var(--transition-ease);
+}
+
+.color-button-remove:hover {
+  background-color: var(--color-danger-hover);
+  transform: translateY(-2px);
+}
+
+.color-circle {
+  -webkit-appearance: none;
+  appearance: none;
+  border-color: var(--color-primary-text);
+  border-radius: 50%;
+  cursor: pointer;
+  height: var(--circle-size);
+  margin-bottom: 0.5rem;
+  padding: 0;
+  transition: transform var(--transition-duration);
+  width: var(--circle-size);
+}
+
+/* Para motor de renderizado Blink y WebKit */
+.color-circle::-webkit-color-swatch {
+  border-color: var(--color-primary-text);
+  border-radius: 50%;
+}
+/* Para motor de renderizado Gecko (Quantum) */
+.color-circle::-moz-color-swatch {
+  border-color: var(--color-primary-text);
+  border-radius: 50%;
+}
+
+.color-title {
+  background-color: var(--color-darkest-bg);
+  margin-bottom: 0.7rem;
+  text-align: center;
+  width: 100%;
+}
+
+.colors-grid {
+  display: grid;
+  gap: var(--gap-grid);
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.container {
+  max-width: 900px;
+  text-align: center;
+  width: 80%;
+}
+
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  justify-content: space-around;
+  margin-bottom: var(--margin-bottom-container);
+}
+
+.tech-item {
+  background-color: var(--color-darker-bg);
+  border-radius: var(--border-radius);
+  flex: 1 1 220px;
+  max-width: 100%;
+  padding: var(--padding-block);
+  transition: transform var(--transition-duration);
+  width: 220px;
+}
+
+.tech-item img {
+  border-radius: var(--border-radius);
+  mask-image: linear-gradient(black 80%, transparent);
+  width: 200px;
+}
+
+.tech-item p {
+  font-size: var(--font-size-tech-item);
+}
+
+.tech-item:hover,
+.color-circle:hover {
+  transform: scale(1.1);
+}
+
+.technologies h3,
+.CRUD h3 {
+  font-size: var(--font-size-h2);
+  margin-bottom: 1rem;
+}
+
+.CRUD {
+  margin-bottom: var(--margin-bottom-container);
+}
+
+body {
+  background-color: var(--color-body-bg);
+  color: var(--color-secondary-text);
+  display: flex;
+  font-family: Arial, sans-serif;
+  justify-content: center;
+}
+
+h1,
+h2,
+h3,
+a {
+  color: var(--color-primary-text);
+  text-wrap: balance;
+}
+
+header h1 {
+  font-size: var(--font-size-h1);
+  margin-top: 2rem;
+}
+
+header h2 {
+  color: var(--color-secondary-text);
+  font-size: var(--font-size-h2);
+  margin-bottom: 2rem;
+}
+
+p {
+  line-height: 1.2rem;
+  text-wrap: balance;
+}
+
+@media (max-width: 724px) {
+  .tech-item {
+    flex: 1 1 150px;
+    width: 150px;
+  }
+
+  .tech-item img {
+    width: 150px;
+  }
+}
