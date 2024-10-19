@@ -78,4 +78,24 @@ describe("Colors", () => {
       "Color no actualizado ya que el valor 'nombre' es obligatorio."
     );
   });
+
+  it("no debería añadir un color con un ID que ya existe", () => {
+    const consoleErrorSpy = spyOn(console, "error");
+    colorsInstance.addColor("CSS", "Cascading Style Sheets", "#1234567");
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      "Ya existe un color con el ID 'CSS'."
+    );
+    const allColors = colorsInstance.getAllColors();
+    expect(allColors.length).toBe(3);
+  });
+
+  it("no debería añadir un color con un código de color inválido", () => {
+    const consoleErrorSpy = spyOn(console, "error");
+    colorsInstance.addColor("InvalidColor", "Invalid", "not-a-color");
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      "El código de color 'not-a-color' no es válido."
+    );
+    const allColors = colorsInstance.getAllColors();
+    expect(allColors.length).toBe(3);
+  });
 });
