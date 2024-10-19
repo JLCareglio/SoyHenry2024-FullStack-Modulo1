@@ -37,6 +37,16 @@ class Colors {
   }
 
   addColor(id, title, colorCode) {
+    if (this.colors.some((color) => color.id === id)) {
+      console.error(`Ya existe un color con el ID '${id}'.`);
+      return;
+    }
+
+    if (!/^#[0-9A-Fa-f]{6}$/.test(colorCode)) {
+      console.error(`El código de color '${colorCode}' no es válido.`);
+      return;
+    }
+
     const color = new Color(id, title, colorCode);
     this.colors.push(color);
     this.saveColors();
@@ -66,7 +76,9 @@ class Colors {
     }
 
     if (!newTitle) {
-      console.error(`Color no actualizado ya que el valor 'nombre' es obligatorio.`);
+      console.error(
+        `Color no actualizado ya que el valor 'nombre' es obligatorio.`
+      );
       return;
     }
 
