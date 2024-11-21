@@ -24,31 +24,33 @@ describe("Colors", () => {
 
   let colorsInstance = new Colors();
 
-  it("al inicializase debería cargar los 3 colores por defecto", () => {
+  it("al inicializase por primera vez debería cargar los 5 colores por defecto", () => {
     const allColors = colorsInstance.getAllColors();
-    expect(allColors.length).toBe(3);
+    expect(allColors.length).toBe(5);
     expect(allColors).toEqual([
-      new Color("HTML", "HTML", "#f66b3a"),
-      new Color("CSS", "CSS", "#16a1dc"),
-      new Color("JS", "JS", "#ffde24"),
+      new Color("HTML", "HTML", "#dc6e3c"),
+      new Color("CSS", "CSS", "#663399"),
+      new Color("JS", "JavaScript", "#efde72"),
+      new Color("TS", "TypeScript", "#5286c6"),
+      new Color("WA", "WebAssembly", "#5f51df"),
     ]);
   });
 
   it("debería añadir un nuevo color", () => {
     colorsInstance.addColor("PHP", "PHP", "#8991b7");
     const allColors = colorsInstance.getAllColors();
-    expect(allColors.length).toBe(4);
-    expect(allColors[3]).toEqual(new Color("PHP", "PHP", "#8991b7"));
+    expect(allColors.length).toBe(6);
+    expect(allColors[5]).toEqual(new Color("PHP", "PHP", "#8991b7"));
   });
 
   it("debería eliminar un color existente", () => {
     colorsInstance.deleteColor("HTML");
     const allColors = colorsInstance.getAllColors();
-    expect(allColors.length).toBe(3);
+    expect(allColors.length).toBe(5);
     expect(allColors.find((color) => color.id === "HTML")).toBeUndefined();
   });
 
-  it("debería no eliminar un color inexistente", () => {
+  it("no debería eliminar un color inexistente", () => {
     const consoleErrorSpy = spyOn(console, "error");
     colorsInstance.deleteColor("NO_EXISTE");
     expect(consoleErrorSpy).toHaveBeenCalledWith(
@@ -86,7 +88,7 @@ describe("Colors", () => {
       "Ya existe un color con el ID 'CSS'."
     );
     const allColors = colorsInstance.getAllColors();
-    expect(allColors.length).toBe(3);
+    expect(allColors.length).toBe(5);
   });
 
   it("no debería añadir un color con un código de color inválido", () => {
@@ -96,6 +98,6 @@ describe("Colors", () => {
       "El código de color 'not-a-color' no es válido."
     );
     const allColors = colorsInstance.getAllColors();
-    expect(allColors.length).toBe(3);
+    expect(allColors.length).toBe(5);
   });
 });
