@@ -7,9 +7,11 @@ class Color {
 }
 
 const defaultColors = [
-  new Color("HTML", "HTML", "#f66b3a"),
-  new Color("CSS", "CSS", "#16a1dc"),
-  new Color("JS", "JS", "#ffde24"),
+  new Color("HTML", "HTML", "#dc6e3c"),
+  new Color("CSS", "CSS", "#663399"),
+  new Color("JS", "JavaScript", "#efde72"),
+  new Color("TS", "TypeScript", "#5286c6"),
+  new Color("WA", "WebAssembly", "#5f51df"),
 ];
 
 class Colors {
