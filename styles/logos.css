@@ -1,0 +1,131 @@
+/*
+  ⛲: https://codepen.io/argyleink/pen/qBegwRB
+  Notes:
+  - div is nested so it can adapt to the container
+  - p is nested so the <sup> can stack with the language and share box padding
+*/
+
+/* for CSS logo */
+@font-face {
+  font-family: DINish;
+  src: url(https://assets.codepen.io/2585/DINish.woff2);
+}
+
+/* for emulating JS/TS/WA logos */
+@font-face {
+  font-family: Neutraface;
+  src: url(https://assets.codepen.io/2585/Neutraface+Text+Bold.otf);
+}
+
+web-logo {
+  container-type: inline-size;
+  overflow: hidden;
+  aspect-ratio: 1;
+
+  .box {
+    --_text: #2b2729;
+    --_surface: gray;
+
+    font-family: DINish;
+    font-variation-settings: "wdth" 75, "slnt" 0, "wght" 900;
+
+    color: var(--_text);
+    background: var(--_surface);
+
+    aspect-ratio: 1;
+    height: 100%; /* for safari */
+    padding: 7.5cqi;
+    font-size: 55cqi;
+
+    display: grid;
+    place-items: end;
+
+    &.css {
+      border-radius: 0 15cqi 15cqi;
+      --_text: white;
+
+      &.blue {
+        --_surface: #0339f8; /* shield blue */
+        --_surface: #0000ee; /* spec link blue */
+        --_surface: blue; /* keyword blue */
+        --_surface: #005a9c; /* w3c blue */
+      }
+
+      &.purple {
+        --_surface: rebeccapurple;
+      }
+
+      &.light {
+        --_surface: white;
+        --_text: black;
+
+        &.outlined {
+          box-shadow: inset 0 0 0 2cqw black;
+        }
+      }
+
+      &.dark {
+        --_surface: black;
+        --_text: white;
+
+        &.outlined {
+          box-shadow: inset 0 0 0 2cqw white;
+        }
+      }
+    }
+
+    &.ts {
+      --_surface: #5286c6;
+      --_text: white;
+      font-family: Neutraface;
+    }
+
+    &.js {
+      --_surface: #efde72;
+      font-family: Neutraface;
+    }
+
+    &.wa {
+      --_surface: #5f51df;
+      --_text: white;
+      font-family: Neutraface;
+      font-size: 45cqi;
+      mask: radial-gradient(circle at center top, #0000, 20%, #000 0);
+      letter-spacing: -0.125em;
+      padding-inline-end: calc(7.5cqi + 0.125em);
+    }
+
+    &.html {
+      --_surface: #dc6e3c;
+      --_text: white;
+      font-size: 40cqi;
+    }
+
+    > * {
+      grid-area: 1/1;
+      line-height: 1;
+    }
+
+    &:is(.js, .ts, .wa) > p {
+      margin-block-end: -0.5ex;
+      margin-inline-end: 0;
+    }
+
+    > p {
+      /* this LOC needs Canary or Safari TP with the feature flag on */
+      /*       text-box: trim-both cap alphabetic; */
+      font-kerning: none;
+      margin-block-end: -0.2ex;
+      margin-inline-end: -0.05ch;
+
+      /*       @supports not (text-box: trim-both cap alphabetic) {
+        margin-block-end: -.5ex;
+      } */
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
