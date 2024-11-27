@@ -155,6 +155,9 @@ web-logo {
   transition: transform var(--transition-duration);
   width: 24cqi;
   max-width: 280px;
+  > a {
+    text-decoration: none;
+  }
 }
 
 web-logo:hover,
